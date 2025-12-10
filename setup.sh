@@ -55,7 +55,9 @@ install_packages() {
     pkg update -y
     
     print_info "Installing required packages..."
-    pkg install -y python python-pip mpv ffmpeg curl unzip
+    pkg install x11-repo
+
+    pkg install -y python python-pip mpv ffmpeg curl unzip vlc
     
     # Check if installations were successful
     if command_exists python3 && command_exists mpv && command_exists ffplay && command_exists curl && command_exists unzip; then
@@ -117,7 +119,7 @@ download_seoah() {
     mkdir -p "$INSTALL_DIR"
     
     # Download URL
-    DOWNLOAD_URL="https://github.com/HackSucks/Source-Engine-On-Android-Helper/releases/download/v1.0/seoah-1.00.zip"
+    DOWNLOAD_URL="https://github.com/HackSucks/Source-Engine-On-Android-Helper/releases/download/v1.01/seoah-v1.01.zip"
     ZIP_FILE="$INSTALL_DIR/seoah.zip"
     
     print_info "Downloading SEOAH from: $DOWNLOAD_URL"
